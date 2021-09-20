@@ -7,7 +7,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Store />
-      <ToastContainer />
+      <ToastContainer autoClose={3000} />
     </BrowserRouter>
   );
 };

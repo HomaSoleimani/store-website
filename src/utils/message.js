@@ -16,7 +16,7 @@ export const errorMessage = (message) => {
   });
 };
 export const warningMessage = (message) => {
-  toast.warn(message, {
+  toast.info(message, {
     position: "top-right",
     autoClose: 3000,
     closeOnClick: true,

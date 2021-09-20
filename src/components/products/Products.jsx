@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, updateCart } from "./../../actions/cart";
 import { successMessage, warningMessage } from "./../../utils/message";
-import { isEqual } from 'lodash';
+import { isEqual } from "lodash";
 
 const Products = () => {
   const { pathname } = useLocation();
@@ -17,10 +17,16 @@ const Products = () => {
   const disabled = (i) =>
     inputChange[i]?.count == 0 && inputChange[i].icon == "fa fa-cart-plus";
 
+  const p2e = (s) => s.replace(/[۰-۹]/g, (d) => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
   const inputHandler = (count, i) => {
     const updatedChange = [...inputChange];
-    updatedChange[i].count = count;
-    setInputChange(updatedChange);
+    if (isNaN(+p2e(count))) {
+      updatedChange[i].count = 0;
+      setInputChange(updatedChange);
+    } else if (+p2e(count) <= 9) {
+      updatedChange[i].count = +p2e(count);
+      setInputChange(updatedChange);
+    }
   };
   const add = (id, i) => {
     dispatch(addToCart(id, inputChange[i].count));
@@ -111,7 +117,7 @@ const Products = () => {
                 type="text"
                 placeholder="تعداد را وارد نمایید"
                 value={inputChange[i] ? inputChange[i].count : 0}
-                onChange={(e) => inputHandler(+e.target.value, i)}
+                onChange={(e) => inputHandler(e.target.value, i)}
               />
               <button
                 type="button"
