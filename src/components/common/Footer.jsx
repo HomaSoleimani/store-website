@@ -43,7 +43,10 @@ const Footer = () => {
             </address>
           </section>
           <section className="footer-form col-12 col-lg-4">
-            <form className="d-flex flex-column justify-content-center align-items-start align-items-lg-center">
+            <form
+              className="d-flex flex-column justify-content-center align-items-start align-items-lg-center"
+              onSubmit={(e) => e.preventDefault()}
+            >
               <textarea placeholder="انتقادات و پیشنهادات خود را با ما در میان بگذارید"></textarea>
               <input type="email" placeholder="ایمیل خود را وارد کنید" />
               <button type="submit" className="bttn btn-s">

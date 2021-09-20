@@ -48,3 +48,12 @@ export const deleteCart = (id) => {
     });
   };
 };
+export const deleteAllCart = () => {
+  return async (dispatch) => {
+    localStorage.removeItem("cart");
+    await dispatch({
+      type: "DELETE_CART",
+      payload: [],
+    });
+  };
+};

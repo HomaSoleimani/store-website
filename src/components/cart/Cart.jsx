@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 const Cart = ({ history }) => {
   const dispatch = useDispatch();
   const reduxCart = useSelector((state) => state.cart);
-  const cart = JSON.parse(localStorage.getItem("cart"));
+  const cart = JSON.parse(localStorage.getItem("cart"))||[];
   const [totalPrice, setTotalPrice] = useState(0);
   const deleteFromCart = (id) => {
     dispatch(deleteCart(id));

@@ -1,8 +1,11 @@
 import React, { Fragment, useRef, useState } from "react";
 import SimpleReactValidator from "simple-react-validator";
+import { deleteAllCart } from "../../actions/cart";
 import { successMessage } from "./../../utils/message";
+import { useDispatch } from 'react-redux';
 
 const Order = () => {
+  const dispatch = useDispatch();
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const validator = useRef(
@@ -20,6 +23,7 @@ const Order = () => {
     event.preventDefault();
     if (validator.current.allValid()) {
       successMessage(".سفارش شما با موفقیت ثبت شد");
+      dispatch(deleteAllCart());
     } else {
       validator.current.showMessages();
     }
