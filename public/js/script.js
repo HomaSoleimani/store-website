@@ -9,7 +9,7 @@ chevronDown.onclick = () => handleSubMenu();
 const handleNavClass = () => {
   const containerMenu = document.getElementById("container-menu");
   const resNav = document.getElementById("res-nav");
-  subMenu.classList.replace("open-sub-menu", "hidden-sub-menu");
+  // subMenu.classList.replace("open-sub-menu", "hidden-sub-menu");
   if (resNav.className === "respons-nav") {
     containerMenu.classList.replace("close-side", "open-side");
     resNav.classList.replace("respons-nav", "side-nav");

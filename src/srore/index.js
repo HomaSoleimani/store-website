@@ -22,3 +22,6 @@ store.dispatch(getAllProducts());
 
 //subscribe
 store.subscribe(() => console.log(store.getState()));
+
+
+// https://homa-shop.netlify.app/
