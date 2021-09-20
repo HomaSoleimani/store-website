@@ -8,6 +8,7 @@ const Logout = ({ history }) => {
 
     useEffect(() => {
         localStorage.removeItem("token");
+        localStorage.removeItem("cart");
         dispatch(clearUser());
         history.push("/");
     }, []);

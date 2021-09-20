@@ -7,10 +7,16 @@ import { getAllProducts } from "./../actions/products";
 export const store = createStore(
   reducers,
   compose(
-    applyMiddleware(thunk, loadingBarMiddleware()),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunk, loadingBarMiddleware())
   )
 );
+// export const store = createStore(
+//   reducers,
+//   compose(
+//     applyMiddleware(thunk, loadingBarMiddleware()),
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+//   )
+// );
 //Initialize
 store.dispatch(getAllProducts());
 

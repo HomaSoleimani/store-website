@@ -1,6 +1,6 @@
 const humburgerIcon = document.getElementById("humburger-icon");
 const body = document.getElementsByTagName("body")[0];
-const subMenu = document.getElementById("sub-menu");
+// const subMenu = document.getElementById("sub-menu");
 const chevronDown = document.getElementById("chevron-down");
 humburgerIcon.onclick = () => handleNavClass();
 chevronDown.onclick = () => handleSubMenu();
@@ -23,13 +23,13 @@ const handleNavClass = () => {
 // finish script for top nav
 
 // start script for sub menu
-const handleSubMenu = () => {
-  if (subMenu.className === "hidden-sub-menu") {
-    subMenu.classList.replace("hidden-sub-menu", "open-sub-menu");
-  } else {
-    subMenu.classList.replace("open-sub-menu", "hidden-sub-menu");
-  }
-};
+// const handleSubMenu = () => {
+//   if (subMenu.className === "hidden-sub-menu") {
+//     subMenu.classList.replace("hidden-sub-menu", "open-sub-menu");
+//   } else {
+//     subMenu.classList.replace("open-sub-menu", "hidden-sub-menu");
+//   }
+// };
 // finish script for sub menu
 
 // start script for card
